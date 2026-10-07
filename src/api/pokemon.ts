@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Pokemon } from "./types.ts";
+import type { Pokemon } from "../types.ts";
 
 interface PokemonListResponse {
   results: { name: string; url: string }[];
