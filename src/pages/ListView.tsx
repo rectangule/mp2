@@ -1,10 +1,3 @@
-/*export default function DetailView() {
-  //return <h1>Detail</h1>;
-  const { pokemon, loading, error } = usePokemon();
-if (loading) return <p>Loading...</p>;
-if (error) return <p>{error}</p>;
-return <h1>List ({pokemon.length})</h1>;
-}*/
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePokemon } from "../context/PokemonContext";
@@ -43,7 +36,7 @@ export default function ListView() {
     return sortDir === "desc" ? sorted.reverse() : sorted;
   }, [pokemon, query, sortKey, sortDir]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Loading</p>;
   if (error) {
     return (
       <div>
@@ -62,7 +55,7 @@ export default function ListView() {
         <input
           type="text"
           className={styles.search}
-          placeholder="Search by name..."
+          placeholder="Search by name"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           aria-label="Search Pokémon by name"
