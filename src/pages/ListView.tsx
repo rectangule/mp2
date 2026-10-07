@@ -8,7 +8,7 @@ return <h1>List ({pokemon.length})</h1>;
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { usePokemon } from "../context/PokemonContext";
-import type { Pokemon } from "../types";
+import type { Pokemon } from "../api/types";
 import styles from "./ListView.module.css";
 
 type SortKey = "id" | "name" | "hp" | "attack" | "height" | "weight";

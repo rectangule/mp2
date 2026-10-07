@@ -7,7 +7,7 @@
 } from "react";
 import type { ReactNode } from "react";
 import { fetchAllPokemon } from "../api/pokemon";
-import type { Pokemon } from "../types";
+import type { Pokemon } from "../api/types";
 
 const CACHE_KEY = "pokemon";
   
