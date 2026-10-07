@@ -2,8 +2,6 @@ import { Link, useParams } from "react-router-dom";
 import { usePokemon } from "../context/PokemonContext";
 import styles from "./DetailView.module.css"
 
-
-
 export default function ListView() {
   const { id } = useParams();
   const { pokemon, loading, error, reload } = usePokemon();
@@ -65,7 +63,7 @@ export default function ListView() {
 
         <ul className={styles.types}>
           {current.types.map((t) => (
-            <li key={t} className={styles.badge}>
+            <li key={t} className={`${styles.badge} ${styles[t] ?? ""}`}>
               {t}
             </li>
           ))}

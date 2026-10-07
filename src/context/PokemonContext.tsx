@@ -27,7 +27,7 @@ function readCache(): Pokemon[] | null {
     const raw = localStorage.getItem(CACHE_KEY);
     return raw ? (JSON.parse(raw) as Pokemon[]) : null;
   } catch {
-    return null; // corrupted cache: ignore it and refetch
+    return null;
   }
 }
 
@@ -51,7 +51,7 @@ export function PokemonProvider({ children }: { children: ReactNode }) {
       try {
         localStorage.setItem(CACHE_KEY, JSON.stringify(data));
       } catch {
-        // storage full or unavailable: the app still works without a cache
+        
       }
     } catch {
       setError("Couldn't load Pokémon. Please try again.");
